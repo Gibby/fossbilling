@@ -1,9 +1,8 @@
 # Docker
-Packaging Docker images for FOSSBilling. Not ready for production use. Only for testing.
+Packaging Docker images for FOSSBilling.
 
 ## Build images
-1. Place the FOSSBilling release in the `src` directory.
-2. Run the following:
+Clone this repo
 
 ```bash
 docker build -t fossbilling/fossbilling:latest -t fossbilling/fossbilling:0.2.4 .
@@ -46,6 +45,14 @@ volumes:
 ```
 
 Then, use the web interface to install FOSSBilling. If you used this example, the database host field in the installer should be filled with `mysql`. Other fields should be self-explanatory.
+
+When done with the installation it doesn't setup the cronjob to setup the cronjon run
+```
+crontab -e
+```
+```
+*/5 * * * * docker exec {name of container} php /var/www/html/cron.php
+```
 
 ## Licensing
 This repository includes open source software and is released under the Apache v2.0 license. See [LICENSE](LICENSE) for the full license terms.
