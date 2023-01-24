@@ -20,10 +20,7 @@ RUN chown -R www-data:www-data /var/www/html
 RUN rm /var/www/html/FOSSBilling.zip
 
 # Install the PDO extension
-RUN docker-php-ext-configure pdo_mysql \
-		&& docker-php-ext-install -j$(nproc) pdo_mysql \
-		&& docker-php-ext-configure gd \
-		&& docker-php-ext-install -j$(nproc) gd \
+RUN docker-php-ext-configure pdo_mysql && docker-php-ext-install -j$(nproc) pdo_mysql && docker-php-ext-configure gd && docker-php-ext-install -j$(nproc) gd \
 
 CMD ["start-apache"]
 
