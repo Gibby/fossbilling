@@ -2,7 +2,7 @@ FROM php:8.1-apache
 LABEL version="0.2.9"
 
 RUN apt update; \
-apt install -y --no-install-recommends wget unzip;
+apt install -y --no-install-recommends wget unzip zlib;
     
 # Configure Apache
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
