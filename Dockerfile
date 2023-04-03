@@ -2,7 +2,7 @@ FROM php:8.1-apache
 LABEL version="0.4.0"
 
 RUN apt update; \
-apt install -y --no-install-recommends wget unzip zlib1g-dev libpng-dev;
+apt install -y --no-install-recommends wget unzip zlib1g-dev libpng-dev libicu-dev;
     
 # Configure Apache
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
