@@ -1,5 +1,5 @@
 FROM php:8.1-apache
-LABEL version="0.3.0"
+LABEL version="0.4.0"
 
 RUN apt update; \
 apt install -y --no-install-recommends wget unzip zlib1g-dev libpng-dev;
@@ -11,7 +11,7 @@ RUN a2enmod rewrite
 
 # Download from Github
 RUN set -eux; \
-	version="0.3.0"; \
+	version="0.4.0"; \
 	wget https://github.com/FOSSBilling/FOSSBilling/releases/download/$version/FOSSBilling.zip; \
 	unzip FOSSBilling.zip -d /var/www/html
 # Copy FOSSBilling to the container and change the owner of the file
@@ -23,7 +23,9 @@ RUN rm /var/www/html/FOSSBilling.zip
 RUN docker-php-ext-configure pdo_mysql \
 	&& docker-php-ext-install -j$(nproc) pdo_mysql \
 	&& docker-php-ext-configure gd \
-	&& docker-php-ext-install -j$(nproc) gd
+	&& docker-php-ext-install -j$(nproc) gd \
+	&& docker-php-ext-configure intl
+	&& docker-php-ext-install -j$(nproc) intl
 
 CMD ["start-apache"]
 
