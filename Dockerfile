@@ -11,7 +11,7 @@ RUN a2enmod rewrite
 
 # Download from Github
 RUN set -eux; \
-	version="0.4.0"; \
+	version="0.4.1"; \
 	wget https://github.com/FOSSBilling/FOSSBilling/releases/download/$version/FOSSBilling.zip; \
 	unzip FOSSBilling.zip -d /var/www/html
 # Copy FOSSBilling to the container and change the owner of the file
