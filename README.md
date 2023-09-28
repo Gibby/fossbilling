@@ -50,10 +50,10 @@ crontab -e
 Clone this repo
 
 ```bash
-docker build -t fossbilling/fossbilling:latest -t fossbilling/fossbilling:0.2.4 .
+docker build -t fossbilling/fossbilling:latest -t fossbilling/fossbilling:latest .
 ```
 
-- The image will have multiple tags. The `latest` tag is for the latest release. The `0.2.4` tag is the version of the FOSSBilling release. Don't forget to change the version number.
+- Currently only the latest tag is available.
 
 - Don't forget the `.` at the end of the command.
 
