@@ -3,7 +3,7 @@ LABEL version="0.5.6"
 
 RUN apt update; \
 apt install -y --no-install-recommends wget unzip zlib1g-dev libpng-dev libicu-dev;
-    
+
 # Configure Apache
 COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 COPY start-apache /usr/local/bin
