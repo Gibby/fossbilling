@@ -23,7 +23,7 @@ jobs:
       -
         name: Docker meta ghcr
         id: meta-ghcr
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           # list of Docker images to use as base name for tags
           images: |
@@ -38,7 +38,7 @@ jobs:
       -
         name: Docker meta DockerHub
         id: meta-dockerhub
-        uses: docker/metadata-action@v4
+        uses: docker/metadata-action@v5
         with:
           # list of Docker images to use as base name for tags
           images: |
