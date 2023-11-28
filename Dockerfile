@@ -1,4 +1,4 @@
-FROM php:8.1-apache
+FROM php:8.3-apache
 LABEL version="0.5.6"
 
 RUN apt update; \
